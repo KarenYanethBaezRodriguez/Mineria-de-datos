@@ -1,6 +1,3 @@
-#si hay un error al quere importar una libreria haberi cmd en el buscador e introducir py -m pip install nombredelalibreria 
-#ejemplo py -m pip install pandas SOLO SI NMARCA ERROR AL EJECUTAR
-# ctrl+K+C para comentar y ctrl+K+U para descomentar
 import requests
 import io
 from bs4 import BeautifulSoup
@@ -42,12 +39,15 @@ def print_tabulate(df: pd.DataFrame):
     print(tabulate(df, headers=df.columns, tablefmt='orgtbl'))
 
 # df1 = get_info_transparencia_uanl(1)
+
 # dfs = [get_info_transparencia_uanl(page) for page in range(1,10)]
+
 # dfs = [get_info_transparencia_uanl(page) for page in range(1,10)]
 # df = pd.concat(dfs)
 # df = pd.read_csv("df.csv") #get_csv_from_url()
-# df = get_info_transparencia_uanl(1)
+#df = get_info_transparencia_uanl(1)
 # print(df["Largest city"])
-df = get_csv_from_url()
+# df = get_csv_from_url()
+df = wiki()
 print_tabulate(df)
-df.to_csv("uanl.csv", index=False)
+df.to_csv("csv/estados.csv", index=False)
